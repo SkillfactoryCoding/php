@@ -22,6 +22,8 @@ let gameRun = false;
 let on = true;
 let discharge;
 
+let phraseRandom;
+
 const orderNumberField = document.getElementById("orderNumberField");
 const answerField = document.getElementById("answerField");
 
@@ -75,11 +77,11 @@ function NewGame() {
 }
 
 function messageError() {
-   const phraseRandom = Math.round(Math.random() * 3);
+  phraseRandom = Math.round(Math.random() * 3);
   const answerPhrase =
-    phraseRandom === 1
+    phraseRandom == 0
       ? `Вы загадали неправильное число!`
-      : phraseRandom === 2
+      : phraseRandom == 1
       ? `Я сдаюсь..`
       : `Шутки шутить вздумал?`;
   answerField.innerText = answerPhrase;
@@ -90,8 +92,6 @@ function messageQuestion() {
 if (gameRun) {
 
  discharge = answerNumber;
- ostatok=null;
- stringNumber=null;
 
  if (String(discharge)[0] == "-") { 
       discharge = String(-discharge);
@@ -150,8 +150,10 @@ if (gameRun) {
     ed = +(ostatok);
     edinici();
     
-    stringNumber = (des + " " + ed)
-      /*alert(stringNumber);*/
+    stringNumber = (des + " " + ed);
+    console.log(stringNumber);
+    /*alert(stringNumber);*/
+
   } 
 
 
@@ -169,7 +171,7 @@ if (discharge % 100 == 0 && String(discharge).length == "3") {
 
 /*******Сотни + еденици  (101, 102, 103)*****/
   
-} else if (discharge % 100 != 0 && ostatok[0] == "0" && String(discharge).length == "3") {
+} else if (discharge % 100 != 0 && ostatok[0] == 0 && String(discharge).length == "3") {
   sot = +(discharge - ostatok[1]);
   sotni();
 
@@ -219,7 +221,7 @@ if (discharge % 100 == 0 && String(discharge).length == "3") {
   /*alert(stringNumber);*/
 }
 
-phraseRandom = Math.round(Math.random() * 3);
+
 /*answerPhrase =
   phraseRandom === 1
     ? `Вы загадали число ${answerNumber}?`
@@ -227,55 +229,70 @@ phraseRandom = Math.round(Math.random() * 3);
     ? `Я думаю, это оно ${answerNumber}?`
     : `Скажи что я прав ${answerNumber}?`;
 answerField.innerText = answerPhrase;*/
+phraseRandom = Math.round(Math.random() * 3);
 
-
+console.log(phraseRandom)
 switch(phraseRandom) { 
-  case 1: 
-  if (stringNumber.length < 20 && answerNumber > 0) {
-    answerField.innerText = `Вы загадали число ${stringNumber}?`; 
+      case 0: 
+      if (stringNumber.length < 20 && answerNumber > 0) {
+        answerField.innerText = `Вы загадали число ${stringNumber}?`; 
 
-  } else if (stringNumber.length > 20 && answerNumber > 0 ){
-    answerField.innerText = `Вы загадали число ${answerNumber}?`;
+      } else if (stringNumber.length > 20 && answerNumber > 0 ){
+        answerField.innerText = `Вы загадали число ${answerNumber}?`;
 
-  } else if (stringNumber.length < 20 && answerNumber < 0 ){
-    answerField.innerText = `Вы загадали число минус ${stringNumber}?`;
+      } else if (stringNumber.length < 20 && answerNumber < 0 ){
+        answerField.innerText = `Вы загадали число минус ${stringNumber}?`;
 
-  } else if (stringNumber.length > 20 && answerNumber < 0 ){
-    answerField.innerText = `Вы загадали число минус ${answerNumber}?`;
-  }
-  break;
-
-
-  case 2: 
-  if (stringNumber.length < 20 && answerNumber > 0) {
-    answerField.innerText = `Я думаю, это оно ${stringNumber}?`; 
-
-  } else if (stringNumber.length > 20 && answerNumber > 0 ){
-    answerField.innerText = `Я думаю, это оно ${answerNumber}?`;
-
-  } else if (stringNumber.length < 20 && answerNumber < 0 ){
-    answerField.innerText = `Я думаю, это оно минус ${stringNumber}?`;
-
-  } else if (stringNumber.length > 20 && answerNumber < 0 ){
-    answerField.innerText = `Я думаю, это оно минус ${answerNumber}?`;
-  }
-  break;
+      } else if (stringNumber.length > 20 && answerNumber < 0 ){
+        answerField.innerText = `Вы загадали число минус ${answerNumber}?`;
+      }
+      break;
 
 
-  case 3: 
-  if (stringNumber.length < 20 && answerNumber > 0) {
-    answerField.innerText = `Скажи что я прав ${stringNumber}?`; 
+      case 1: 
+      if (stringNumber.length < 20 && answerNumber > 0) {
+        answerField.innerText = `Я думаю, это оно ${stringNumber}?`; 
 
-  } else if (stringNumber.length > 20 && answerNumber > 0 ){
-    answerField.innerText = `Скажи что я прав ${answerNumber}?`;
+      } else if (stringNumber.length > 20 && answerNumber > 0 ){
+        answerField.innerText = `Я думаю, это оно ${answerNumber}?`;
 
-  } else if (stringNumber.length < 20 && answerNumber < 0 ){
-    answerField.innerText = `Скажи что я прав минус ${stringNumber}?`;
+      } else if (stringNumber.length < 20 && answerNumber < 0 ){
+        answerField.innerText = `Я думаю, это оно минус ${stringNumber}?`;
 
-  } else if (stringNumber.length > 20 && answerNumber < 0 ){
-    answerField.innerText = `Скажи что я прав минус ${answerNumber}?`;
-  }
-  break;
+      } else if (stringNumber.length > 20 && answerNumber < 0 ){
+        answerField.innerText = `Я думаю, это оно минус ${answerNumber}?`;
+      }
+      break;
+
+
+      case 2: 
+      if (stringNumber.length < 20 && answerNumber > 0) {
+        answerField.innerText = `Скажи что я прав ${stringNumber}?`; 
+
+      } else if (stringNumber.length > 20 && answerNumber > 0 ){
+        answerField.innerText = `Скажи что я прав ${answerNumber}?`;
+
+      } else if (stringNumber.length < 20 && answerNumber < 0 ){
+        answerField.innerText = `Скажи что я прав минус ${stringNumber}?`;
+
+      } else if (stringNumber.length > 20 && answerNumber < 0 ){
+        answerField.innerText = `Скажи что я прав минус ${answerNumber}?`;
+      }
+      break;
+
+      default:
+        if (stringNumber.length < 20 && answerNumber > 0) {
+        answerField.innerText = `Скажи что я прав ${stringNumber}?`; 
+
+      } else if (stringNumber.length > 20 && answerNumber > 0 ){
+        answerField.innerText = `Скажи что я прав ${answerNumber}?`;
+
+      } else if (stringNumber.length < 20 && answerNumber < 0 ){
+        answerField.innerText = `Скажи что я прав минус ${stringNumber}?`;
+
+      } else if (stringNumber.length > 20 && answerNumber < 0 ){
+        answerField.innerText = `Скажи что я прав минус ${answerNumber}?`;
+      }
   }
 }
 }
@@ -343,9 +360,10 @@ function sotni() {
 
 /* Кнопка больше */
 document.querySelector("#btnOver").addEventListener("click", function () {
-  if (gameRun) {
+  if (gameRun && on==false) {
     if (minValue === maxValue || minValue > maxValue) {
       messageError();
+      
     } else {
       minValue = answerNumber + 1;
       answerNumber = Math.floor((minValue + maxValue) / 2);
@@ -359,11 +377,11 @@ document.querySelector("#btnOver").addEventListener("click", function () {
 
 /* Кнопка меньше */
 document.querySelector("#btnLess").addEventListener("click", function () {
-  if (gameRun) {
+  if (gameRun && on==false) {
     if (minValue >= maxValue) {
       messageError();
-    } else {
-      
+
+    } else {      
       maxValue = answerNumber - 1;
       answerNumber = Math.ceil((minValue + maxValue) / 2);
       console.log(`maxValue ${maxValue}, minValue ${minValue}`);
@@ -377,11 +395,11 @@ document.querySelector("#btnLess").addEventListener("click", function () {
 /* Кнопка верно */
 document.getElementById("btnEqual").addEventListener("click", function () {
   if (gameRun) {
-    const phraseRandom = Math.round(Math.random() * 3);
+    phraseRandom = Math.round(Math.random() * 3);
     const answerPhrase =
-      phraseRandom === 1
+      phraseRandom == 0
         ? `Я всегда угадываю :)`
-        : phraseRandom === 2
+        : phraseRandom == 1
         ? `Я говорил, говорил что угадаю :)`
         : `Прорицатель, мое второе имя :)`;
 
