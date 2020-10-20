@@ -1,4 +1,12 @@
 .game-card {
-    height: 100vh;
-    font-family: 'Open Sans', monospace;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+#start, #collapseExample {
+  margin: 0 0 10px;
+}
+
+#riddle {
+  text-align: center;
 }
