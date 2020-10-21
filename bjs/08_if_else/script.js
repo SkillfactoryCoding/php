@@ -318,7 +318,7 @@ function edinici() {
     case 1: ed = "один"; break;
     case 2: ed = "два"; break;
     case 3: ed = "три"; break;
-    case 4: ed = "четыри"; break;
+    case 4: ed = "четыре"; break;
     case 5: ed = "пять"; break;
     case 6: ed = "шесть"; break;
     case 7: ed = "семь"; break;
