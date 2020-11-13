@@ -1,0 +1,21 @@
+.container {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p.m-0 {
+    text-align: center;;
+    color: white;
+}
+
+.card-header {
+    background-color: cadetblue;
+}
+
+label {
+    font-size: 10pt;
+    font-weight: 600;
+}

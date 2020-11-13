@@ -7,3 +7,9 @@
     text-align: end;
     font-size: x-large;
 }
+
+#info {
+    color:rgb(187, 187, 187);
+    text-align: right;
+    height: 200px;
+}

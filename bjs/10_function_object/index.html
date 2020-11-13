@@ -3,36 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Генератор случайных пользователей</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+          
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
-<div class="container">
-    <div class="row game-card align-items-center">
-        <div class="col col-md-6 offset-md-3">
-            <div class="card text-center">
-                <div class="card-header">
-                    <p class="m-0">Окно результатов генерации</p>
+
+  <div class="container">
+    <div class="row card ">
+        <div class="card-header">
+            <p class="m-0">ОКНО РЕЗУЛЬТАТОВ ГЕНЕРАЦИИ</p>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="surnameOutput">Фамилия:</label>
+                    <input type="text" class="form-control" id="surnameOutput" placeholder="Фамилия">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="firstNameOutput">Имя:</label>
+                    <input type="text" class="form-control" id="firstNameOutput" placeholder="Имя">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="middleNameOutput">Отчество:</label>
+                    <input type="text" class="form-control" id="middleNameOutput" placeholder="Отчество">
+                  </div>   
+                  <button type="button" class="btn btn-success  btn-block" id="start" data-toggle="collapse" data-target="#collapseExample">ГЕНЕРАЦИЯ</button>                
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="card-title"><span id="surnameOutput">Генерация фамилии</span></h3>
-                            <h4>Имя: <span id="firstNameOutput">Иван</span></h4>
-                            <p>
-                                <span id="genderOutput">Генерация пола</span>
-                                <span>, </span>
-                                <span id="birthYearOutput">Генерация года рождения</span>
-                            </p>
-                        </div>
-                    </div>
+                
+                <div class="col">   
+                  <div class="form-group">
+                    <label for="professionOutput">Профессия:</label>
+                    <input type="text" class="form-control" id="professionOutput" placeholder="Профессия">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="genderOutput">Пол</label>
+                    <input type="text" class="form-control" id="genderOutput" placeholder="Пол">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="birthYearOutput">Дата рождения:</label>
+                    <input type="text" class="form-control" id="birthYearOutput" placeholder="Дата рождения">
+                  </div>
+                  <button type="button" class="btn btn-danger btn-block" id="reset" data-toggle="collapse" data-target="#collapseExample">СБРОС</button>
                 </div>
+                
+                
             </div>
         </div>
     </div>
 </div>
+
+
+
 <script src="personGenerator.js"></script>
 <script src="init.js"></script>
 </body>
