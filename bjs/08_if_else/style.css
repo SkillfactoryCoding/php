@@ -1,4 +1,55 @@
+#mainHeader {
+    height: 20vh;
+    background: url(https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1700&q=80);
+}
+
+#mainFooter {
+    height: 5vh;
+    background-color:darkslateblue;
+}
+
+#mainFooter a{
+    color: whitesmoke;
+}
+
+#mainFooter a:hover {
+    color: orchid;
+}
+
+#title {
+    font-family: fantasy;
+    color: whitesmoke;
+    font-size: 2em;
+}
+
+#logo {
+    height: 80px;
+    width: 80px;
+}
+
+#btnManual, #btnConnection {
+    border: transparent;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.row {
+    height: 33%;
+}
+
 .game-card {
-    height: 100vh;
+    height: 75vh;
     font-family: 'Open Sans', monospace;
 }
+
+.card-body {
+    padding: 0.8rem;
+    font-size: 0.9em;
+    background-color:beige;
+}
+
+#answerField {
+    font-family: fantasy;
+    font-weight: bold;
+}
+

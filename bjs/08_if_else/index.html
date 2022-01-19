@@ -9,34 +9,101 @@
     <link rel="stylesheet" href="style.css" type="text/css"/>
 </head>
 <body>
-<div class="container">
-    <div class="row game-card align-items-center">
-        <div class="col col-md-4 offset-md-4">
-            <div class="card text-center">
-                <div class="card-header">
-                    <p class="m-0">Вопрос №<span id="orderNumberField">5</span></p>
+<div class="container-fluid" id="mainHeader">
+    <div class="row">
+            <img src="assets/img/logoTest.png" alt="лого" id="logo">
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <h3 id="title">Time to play the game!</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#collapseA" aria-expanded="false" aria-controls="collapseA" id="btnConnection">
+                Обратная связь
+            </button>
+            <div class="collapse" id="collapseA">
+                <div class="card card-body text-center">
+                    Наши контакты:Gambit47@yandex.ru
                 </div>
-                <div class="card-body">
-                    <div class="row no-gutters">
-                        <div class="col">
-                            <h3 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="btn-group">
-                        <button class="btn btn-info" id="btnLess">&#129047;<br>меньше</button>
-                        <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
-                        <button class="btn btn-info" id="btnOver">больше<br>&#129045;</button>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-link" id="btnRetry">Заново</button>
+            </div>
+        </div>
+        <div class="col text-center">
+            <button class="btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#collapseB" aria-expanded="false" aria-controls="collapseB" id="btnManual">
+                Правила игры
+            </button>
+            <div class="collapse" id="collapseB">
+                <div class="card card-body text-center">
+                    Задаете диапазон и загадываете число!
+                    "Нострадамус" угадывает!
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row game-card align-items-center">
+        <div class="col col-md-6 offset-md-3">
+            <div class="card text-center">
+                <div class="card-header">
+                    <p class="m-0">Вопрос №<span id="orderNumberField">0</span></p>
+                </div>
+                <div class="card-body">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h3 class="card-title m-0"><span id="answerField">Nostradamus's Game</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <div class="btn-group">
+                                <button class="btn btn-info" id="btnLess">&#x3c;<br>меньше</button>
+                                <button class="btn btn-warning btn-lg" id="btnEqual">Верно!</button>
+                                <button class="btn btn-info" id="btnOver">больше<br>&#x3e;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group">
+                    <button class="btn btn-link" data-bs-toggle = "collapse" data-bs-target = "#collapseC" aria-expanded = "false"  aria-controls= "collapseC" id="btnGame">
+                        Играть
+                    </button>
+                    <button class="btn btn-link" id = "btnReset">
+                        Сброс
+                    </button>
+                    </div>
+                </div>
+                    <div class="collapse" id="collapseC">
+                        <div class="card card-body text-center">
+                            <form>
+                                <div class="form-group">
+                                    <label for="minValue">Введите минимальное значение</label><br>
+                                    <input type="number" class="form-contorol" id = "minValue" aria-describedby="minHelp">
+                                    <small id="minHelp" class="form-text text-muted">Минимальное значение для ввода: -999!</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="maxValue">Введите максимальное значение</label><br>
+                                    <input type="number" class="form-contorol" id = "maxValue" aria-describedby="maxHelp">
+                                    <small id="maxHelp" class="form-text text-muted">Максимальное значение для ввода: 999!</small>
+                                </div>
+                                <button type="submit" class="btn btn-primary" data-bs-toggle = "collapse" data-bs-target = "#collapseC" aria-expanded = "false"  aria-controls= "collapseC" id="btnStart" >
+                                    Старт
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+            </div> 
+        </div>
+    </div>
+</div>
+<div class="container-fluid text-center" id="mainFooter">
+    <a href="#" id="home">Gambit47@yandex.ru</a>
+</div>
 <script src="script.js"></script>
+<script src="bootstrap.min.js"></script>
 </body>
 </html>
