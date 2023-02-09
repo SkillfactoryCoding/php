@@ -1,3 +1,8 @@
+body {
+    background-image: url(img/1654676079_3-celes-club-p-formuli-oboi-krasivie-3.jpg);
+    background-size: cover;
+}
+
 .calc-row {
     height: 100vh;
     font-family: 'Share Tech Mono', monospace;
@@ -6,4 +11,39 @@
 .input-window {
     text-align: end;
     font-size: x-large;
+    background-color: rgb(32, 32, 32);
+    color: rgb(154, 227, 44);
+    text-shadow: 0 0 5px rgb(119, 189, 15);
 }
+
+.card-body {
+    background-color: rgb(49, 48, 48);
+    border:inset 5px rgb(255, 255, 255);
+    border-radius: 10%;
+}
+
+.card {
+    border-style: none;
+    background: none;
+}
+
+.btn {
+    border: outset;
+    background-color: #353637;
+    color: aliceblue;
+    
+}
+
+#btn_clr {
+    border-radius:  0;
+    background-color: #A3A5AA;
+    color: black;
+    font-weight: bold;
+}
+
+#btn_sum, #btn_def, #btn_mult, #btn_div, #btn_calc, #btn_root {
+    background-color: #F99003;
+    
+}
+
+
