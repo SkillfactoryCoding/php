@@ -50,6 +50,11 @@ const answerField = document.getElementById('answerField');
 orderNumberField.innerText = orderNumber;
 answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
+if (minValue == maxValue) {
+    answerField.innerText = `Легко.Вы загадали число ${answerNumber }?`;
+    gameRun = false;
+}
+
 })
 
 
@@ -97,6 +102,11 @@ const answerField = document.getElementById('answerField');
 orderNumberField.innerText = orderNumber;
 answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
+if (minValue == maxValue) {
+    answerField.innerText = `Легко.Вы загадали число ${answerNumber }?`;
+    gameRun = false;
+}
+
 })
 
 document.getElementById('btnOver').addEventListener('click', function () {
@@ -122,7 +132,7 @@ document.getElementById('btnOver').addEventListener('click', function () {
 //Кнопка меньше
 document.getElementById('btnLess').addEventListener('click', function () {
     if (gameRun){
-        if (minValue === (maxValue-1)){ //сравнивать надо на единицу меньше
+        if (minValue == (maxValue-1)){ //сравнивать надо на единицу меньше
             const phraseRandom = Math.round( Math.random());
             const answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали неправильное число!\n\u{1F914}` :
@@ -158,177 +168,28 @@ document.getElementById('btnEqual').addEventListener('click', function () {
     }
 })
 
-/*
-//определим длину числа
-str = answerNumber;
-answerPhrase = '';
-str=str.toString();
-console.log('answerNumber' + answerNumber);
-console.log('Строка значения' + str);
-console.log('Длина значения' + str.length);
 
-if (str.length == 3) {
-    switch (Math.trunc(answerNumber/100)){
-        case 1: answerPhrase = 'Сто ';
-            str.length = 2;
-            str = (str % 100);
-            console.log('Остаток деления на 100  ' + str);
-            break;
-        case 2: answerPhrase = 'Двести ';
-            str.length = 2;
-            str = (str % 100);
-            break;
-        case 3: answerPhrase = 'Триста ';
-            str.length = 2;
-            str = (str % 100);
-            break;
-        case 4: answerPhrase = 'Четыреста ';
-            str.length = 2;
-            str = (str % 100);
-            break;
-        case 5: answerPhrase = 'Пятьсот ';
-            str.length = 2;
-            str = (str % 100);
-            break;
-        case 6: answerPhrase = 'Шестьсот ';
-            str.length = 2;
-            str = (str % 100);
-            break;
-        case 7: answerPhrase = 'Семьсот ';
-            str.length = 2;
-            str = (str % 100);
-            break;
-        case 8: answerPhrase = 'Восемьсот ';
-            str.length = 2;
-            str = (str % 100);
-            break;
-        case 9: answerPhrase = 'Девятьсот ';
-            str.length = 2;
-            str = (str % 100);
-            break;
-        };
-        console.log(answerPhrase);  
-};
-
-str=str.toString();
-console.log('Строка значения ' + str);
-console.log('Длина значения ' + str.length);
-
-//определяем десчтки
-if (str.length == 2) {
-    console.log('str ' + str);
-    switch (Math.trunc(str)){ //выбираем от 10 до 19
-        case 10: answerPhrase = answerPhrase + 'десять';
-            str.length = 0;
-            break;
-        case 11: answerPhrase = answerPhrase + 'одинадцать';
-            str.length = 0;
-            break;
-        case 12: answerPhrase = answerPhrase + 'двенадцать';
-            str.length = 0;
-            break;
-        case 13: answerPhrase = answerPhrase + 'тринадцать';
-            str.length = 0;
-            break;
-        case 14: answerPhrase = answerPhrase + 'четырнадцать';
-            str.length = 0;
-            break;
-        case 15: answerPhrase = answerPhrase + 'пятнадцать';
-            str.length = 0;
-            break;
-        case 16: answerPhrase = answerPhrase + 'шестьнадцать';
-            str.length = 0;
-            break;
-        case 17: answerPhrase = answerPhrase + 'семнадцать';
-            str.length = 0;
-            break;
-        case 18: answerPhrase = answerPhrase + 'восемнадцать';
-            str.length = 0;
-            break;
-        case 19: answerPhrase = answerPhrase + 'Девятнадцать';
-            str.length = 0;
-            break;
-            default:{ // иначе ищем десятки с 2 по 9, числа с 20 по 99
-                switch (Math.trunc(str/10)){
-                    case 2: answerPhrase = answerPhrase + 'двадцать ';
-                        str = (str % 10);
-                        break;
-                    case 3: answerPhrase = answerPhrase + 'тридцать ';
-                        str = (str % 10);
-                        break;
-                    case 4: answerPhrase = answerPhrase + 'сорок ';
-                        break;
-                    case 5: answerPhrase = answerPhrase + 'пятьдесят ';
-                        break;
-                    case 6: answerPhrase = answerPhrase + 'шестьдесят ';
-                        break;
-                    case 7: answerPhrase = answerPhrase + 'семьдесят ';
-                        break;
-                    case 8: answerPhrase = answerPhrase + 'восемьдесят ';
-                        break;
-                    case 9: answerPhrase = answerPhrase + 'девяносто ';
-                    break;
-
-                };
-
-            };
-        };
-        console.log(answerPhrase);  
-};
-
-//Работаем по единицам
-str=str.toString();
-console.log('Строка значения ' + str);
-console.log('Длина значения ' + str.length);
-
-if (str.length == 1) {
-    console.log('str ' + str);
-    switch (Math.trunc(str)){ //выбираем от 1 до 9
-        case 1: answerPhrase = answerPhrase + 'один';
-            str.length = 0;
-            break;
-        case 2: answerPhrase = answerPhrase + 'два';
-            str.length = 0;
-            break;
-        case 3: answerPhrase = answerPhrase + 'три';
-            str.length = 0;
-            break;
-        case 4: answerPhrase = answerPhrase + 'четыре';
-            str.length = 0;
-            break;
-        case 5: answerPhrase = answerPhrase + 'пять';
-            str.length = 0;
-            break;
-        case 6: answerPhrase = answerPhrase + 'шесть';
-            str.length = 0;
-            break;
-        case 7: answerPhrase = answerPhrase + 'семь';
-            str.length = 0;
-            break;
-        case 8: answerPhrase = answerPhrase + 'восемь';
-            str.length = 0;
-            break;
-        case 9: answerPhrase = answerPhrase + 'девять';
-            str.length = 0;
-            break;
-    }
-    console.log(answerPhrase); 
-};*/
 
 document.onclick = function() {
     // тело обработчика
-    console.log('Это тот блок');
+    console.log('Это тот блок для проваерки наших действий');
 
-    //определим длину числа
-str = answerNumber;
+//опреедлим еще знак
+NumberZnak = (answerNumber<0) ? 'Минус' : '';
+console.log('NumberZnak ' + NumberZnak);
+
+//определим длину числа
+str = Math.abs(answerNumber);
 answerPhrase = '';
 str=str.toString();
 console.log('answerNumber' + answerNumber);
 console.log('Строка значения' + str);
 console.log('Длина значения' + str.length);
 
+
+
 if (str.length == 3) {
-    switch (Math.trunc(answerNumber/100)){
+    switch (Math.trunc(str/100)){
         case 1: answerPhrase = 'Сто ';
             str.length = 2;
             str = (str % 100);
@@ -366,8 +227,12 @@ if (str.length == 3) {
             str.length = 2;
             str = (str % 100);
             break;
+
+            default: 
+            str.length = 2;
+            str = (str % 100);
         };
-        console.log(answerPhrase);  
+//        console.log(answerPhrase);  
 };
 
 str=str.toString();
@@ -412,73 +277,91 @@ if (str.length == 2) {
                 switch (Math.trunc(str/10)){
                     case 2: answerPhrase = answerPhrase + 'двадцать ';
                         str = (str % 10);
+                        str.length = 1;
                         break;
                     case 3: answerPhrase = answerPhrase + 'тридцать ';
                         str = (str % 10);
+                        str.length = 1;
                         break;
                     case 4: answerPhrase = answerPhrase + 'сорок ';
                     str = (str % 10);
+                    str.length = 1;
                         break;
                     case 5: answerPhrase = answerPhrase + 'пятьдесят ';
                     str = (str % 10);
+                    str.length = 1;
                         break;
                     case 6: answerPhrase = answerPhrase + 'шестьдесят ';
                     str = (str % 10);
+                    str.length = 1;
                         break;
                     case 7: answerPhrase = answerPhrase + 'семьдесят ';
                     str = (str % 10);
+                    str.length = 1;
                         break;
                     case 8: answerPhrase = answerPhrase + 'восемьдесят ';
                     str = (str % 10);
+                    str.length = 1;
                         break;
                     case 9: answerPhrase = answerPhrase + 'девяносто ';
                     str = (str % 10);
+                    str.length = 1;
                     break;
 
                 };
 
             };
         };
-        console.log(answerPhrase);  
+       console.log(answerPhrase);  
 };
 
 //Работаем по единицам
 str=str.toString();
-console.log('Строка значения ' + str);
-console.log('Длина значения ' + str.length);
+//console.log('Строка значения Работаем по единицам' + str);
+//console.log('Длина значения Работаем по единицам' + str.length);
 
 if (str.length == 1) {
-    console.log('str ' + str);
+    
     switch (Math.trunc(str)){ //выбираем от 1 до 9
         case 1: answerPhrase = answerPhrase + 'один';
+        
             str.length = 0;
             break;
         case 2: answerPhrase = answerPhrase + 'два';
+        
             str.length = 0;
             break;
         case 3: answerPhrase = answerPhrase + 'три';
+        
             str.length = 0;
             break;
         case 4: answerPhrase = answerPhrase + 'четыре';
+        
             str.length = 0;
             break;
         case 5: answerPhrase = answerPhrase + 'пять';
+        
             str.length = 0;
             break;
         case 6: answerPhrase = answerPhrase + 'шесть';
+        
             str.length = 0;
             break;
         case 7: answerPhrase = answerPhrase + 'семь';
+        
             str.length = 0;
             break;
         case 8: answerPhrase = answerPhrase + 'восемь';
-            str.length = 0;
+                    str.length = 0;
             break;
         case 9: answerPhrase = answerPhrase + 'девять';
-            str.length = 0;
+                    str.length = 0;
             break;
     }
-    console.log(answerPhrase); 
+   console.log(NumberZnak + answerPhrase); 
+ //  console.log(answerPhrase);
 };
-    // конец тела обработчика
+    //надо проверить на строку на длину
+    console.log('длина строки ответа' + (NumberZnak + answerPhrase).length);
+// конец тела обработчика
   }
