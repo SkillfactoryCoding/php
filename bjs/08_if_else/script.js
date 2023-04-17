@@ -38,8 +38,6 @@ if (minValue > maxValue) { // смена если меньшее больше б
 
 }
 
-
-
 alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
 answerNumber  = Math.floor((minValue + maxValue) / 2);
 orderNumber = 1;
@@ -57,17 +55,35 @@ answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
 //повтор игры
 document.getElementById('btnRetry').addEventListener('click', function () {
-minValue = parseInt(prompt('Минимальное знание числа для игры','0')) || 0; //добавили присвоение по дефолту
+
+minValue = parseInt(prompt('Минимальное знание числа для игры', '0')) || '0'; //добавили присвоение по дефолту
 console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
-maxValue = parseInt(prompt('Максимальное знание числа для игры', 100)) || 100; //добавили присвоение по дефолту//исправить надо
-console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
+
+maxValue = parseInt(prompt('Максимальное знание числа для игры', '100')); //добавили присвоение по дефолту//исправить надо не реагирует на ноль
+console.log('Максимальное число '+ maxValue);//Вывод в консоль для проверки
+if (isNaN(maxValue)) {
+    maxValue = 100
+};
+console.log('Максимальное число '+ maxValue);//Вывод в консоль для проверки
 
 //Сравнение по разрешенному максимальному и минимальному значению через тернарный оператор
 minValue = (minValue < -999) ? -999 : minValue;
+minValue = (minValue > 999) ? 999 : minValue;
 console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
 maxValue = (maxValue > 999) ? 999 : maxValue;
-console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
+maxValue = (maxValue < -999) ? -999 : maxValue;
+//if (maxValue == 0)  maxValue = 0; // поменяли условие проверки и исправления на дефолт
+console.log('Максимальное число '+ maxValue);//Вывод в консоль для проверки
 
+if (minValue > maxValue) { // смена если меньшее больше больщего через промежуточную переменную
+   minValueError = minValue;
+    minValue = maxValue;
+    maxValue = minValueError;
+    console.log('обменное число'+ minValueError); //Вывод в консоль для проверки
+    console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
+    console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
+
+}
 
 alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
 answerNumber  = Math.floor((minValue + maxValue) / 2);
