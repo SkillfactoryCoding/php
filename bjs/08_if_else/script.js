@@ -1,30 +1,50 @@
-minValue = 0;
-maxValue = 100;
-orderNumber = 0;
+let minValue = 0;
+let maxValue = 0;
+let orderNumber = 1;
 let answerNumber =0; 
 let gameRun = true;
 let numberSign = 0;
+let str = answerNumber;
 
-//повтор игры
+//начало игры
 addEventListener("DOMContentLoaded", (event) => {
 
-let minValue = parseInt(prompt('Минимальное знание числа для игры','0')) || 0; //добавили присвоение по дефолту
+minValue = parseInt(prompt('Минимальное знание числа для игры', '0')) || '0'; //добавили присвоение по дефолту
 console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
-let maxValue = parseInt(prompt('Максимальное знание числа для игры', 100)) || 100; //добавили присвоение по дефолту//исправить надо
-console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
+
+maxValue = parseInt(prompt('Максимальное знание числа для игры', '100')); //добавили присвоение по дефолту//исправить надо не реагирует на ноль
+console.log('Максимальное число '+ maxValue);//Вывод в консоль для проверки
+if (isNaN(maxValue)) {
+    maxValue = 100
+};
+console.log('Максимальное число '+ maxValue);//Вывод в консоль для проверки
 
 //Сравнение по разрешенному максимальному и минимальному значению через тернарный оператор
 minValue = (minValue < -999) ? -999 : minValue;
+minValue = (minValue > 999) ? 999 : minValue;
 console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
 maxValue = (maxValue > 999) ? 999 : maxValue;
-console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
+maxValue = (maxValue < -999) ? -999 : maxValue;
+//if (maxValue == 0)  maxValue = 0; // поменяли условие проверки и исправления на дефолт
+console.log('Максимальное число '+ maxValue);//Вывод в консоль для проверки
+
+if (minValue > maxValue) { // смена если меньшее больше больщего через промежуточную переменную
+   minValueError = minValue;
+    minValue = maxValue;
+    maxValue = minValueError;
+    console.log('обменное число'+ minValueError); //Вывод в консоль для проверки
+    console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
+    console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
+
+}
+
 
 
 alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
-let answerNumber  = Math.floor((minValue + maxValue) / 2);
-let orderNumber = 1;
-let gameRun = true;
-let numberSign = 0;
+answerNumber  = Math.floor((minValue + maxValue) / 2);
+orderNumber = 1;
+gameRun = true;
+numberSign = 0;
 
 const orderNumberField = document.getElementById('orderNumberField');
 const answerField = document.getElementById('answerField');
@@ -37,25 +57,29 @@ answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
 //повтор игры
 document.getElementById('btnRetry').addEventListener('click', function () {
-    /*minValue = 0;
-    maxValue = 100;
-    orderNumber = 0;*/
-    //убрать надо let так как переменные уже объявили
-    //Запрашиваем опять максимум и минимум*/
-    minValue = parseInt(prompt('Минимальное знание числа для игры','0'));
-    maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
-    alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
-    //Высчитываем ответ
-    answerNumber  = Math.floor((minValue + maxValue) / 2);
-    // номер шага
-    orderNumber = 1;
-    //Статус игры
-    gameRun = true;
-    const orderNumberField = document.getElementById('orderNumberField');
-    const answerField = document.getElementById('answerField');
+minValue = parseInt(prompt('Минимальное знание числа для игры','0')) || 0; //добавили присвоение по дефолту
+console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
+maxValue = parseInt(prompt('Максимальное знание числа для игры', 100)) || 100; //добавили присвоение по дефолту//исправить надо
+console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
 
-    orderNumberField.innerText = orderNumber;
-    answerField.innerText = `Вы загадали число ${answerNumber }?`;
+//Сравнение по разрешенному максимальному и минимальному значению через тернарный оператор
+minValue = (minValue < -999) ? -999 : minValue;
+console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
+maxValue = (maxValue > 999) ? 999 : maxValue;
+console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
+
+
+alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
+answerNumber  = Math.floor((minValue + maxValue) / 2);
+orderNumber = 1;
+gameRun = true;
+numberSign = 0;
+
+const orderNumberField = document.getElementById('orderNumberField');
+const answerField = document.getElementById('answerField');
+
+orderNumberField.innerText = orderNumber;
+answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
 })
 
@@ -118,8 +142,9 @@ document.getElementById('btnEqual').addEventListener('click', function () {
     }
 })
 
+/*
 //определим длину числа
-let str = answerNumber;
+str = answerNumber;
 answerPhrase = '';
 str=str.toString();
 console.log('answerNumber' + answerNumber);
@@ -272,14 +297,14 @@ if (str.length == 1) {
             break;
     }
     console.log(answerPhrase); 
-};
+};*/
 
 document.onclick = function() {
     // тело обработчика
     console.log('Это тот блок');
 
     //определим длину числа
-let str = answerNumber;
+str = answerNumber;
 answerPhrase = '';
 str=str.toString();
 console.log('answerNumber' + answerNumber);
