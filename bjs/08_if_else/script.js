@@ -1,11 +1,13 @@
 //обрабатываем новую форму ввода
 const  minValueInput = document.querySelector('#InputTextField1');
 const  maxValueInput = document.querySelector('#InputTextField2');
-const  duplicateField1 = document.querySelector('#duplicateField1');
-const  duplicateField2 = document.querySelector('#duplicateField2');
+//const  duplicateField1 = document.querySelector('#duplicateField1');
+//const  duplicateField2 = document.querySelector('#duplicateField2');
 
 // поле для вывода информации о правилах игры
 const  outputField = document.querySelector('#outputField');
+
+
 
 minValue = 0;
 maxValue = 100;
@@ -19,8 +21,9 @@ let str = answerNumber;
 
 
 
-const  button = document.querySelector('button');
+const  button = document.querySelector('#ButtonInput');
 
+//кнопка подтверждения 
 button.addEventListener('click', (event) => {
     //event.preventDefault();
     console.log(InputTextField1.value);
@@ -30,15 +33,36 @@ button.addEventListener('click', (event) => {
     //duplicateField2.textContent = InputTextField2.value;
     minValue=parseInt(InputTextField1.value);
     maxValue=parseInt(InputTextField2.value);
+
     console.log('Введеное MinValue ' + minValue);
     console.log('Введеное MaxValue ' + maxValue);
     startGame();
 })
 
+//document.addEventListener('DOMContentLoaded', function() {
+     // получим кнопку id="btn" с помощью которой будем открывать модальное окно
+  //const btn = document.querySelector('#btn1');
+  //// активируем контент id="modal" как модальное окно
+  //const modal = new bootstrap.Modal(document.querySelector('#modal'));
+  // при нажатии на кнопку
+  //btn.addEventListener('click', function() {
+    
+    // открываем модальное окно
+    //modal.show();
+//});
+//});
+
+//document.getElementById('btn').addEventListener('click', function () {
+    //getElementById('#btn').addEventListener('click', function() {
+    //    document.getElementById('btn1').addEventListener('click', function () {
+    //modal.show()
+//});
 
 //начало игры после заргузки страницы
 addEventListener("DOMContentLoaded", (event) => {
     startGame();
+
+   
 
 })
 
@@ -75,6 +99,11 @@ function startGame() {
        console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
        console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
     }
+
+    //duplicateField1.textContent = minValue;
+    //duplicateField2.textContent = maxValue;
+    InputTextField1.value = minValue;
+    InputTextField2.value = maxValue;
 
     //alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
     outputField.textContent=(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
@@ -162,11 +191,11 @@ document.getElementById('btnEqual').addEventListener('click', function () {
        // answerField.innerText = `Я всегда угадываю\n\u{1F60E}`
        const phraseRandom = Math.round( Math.random()*3);
        switch(phraseRandom){
-        case 1: answerPhrase = '1++++';
+        case 1: answerPhrase = 'Кто чемпион?! Я ЧЕМПИОН!!!';
         break;
-        case 2: answerPhrase = '2+++';
+        case 2: answerPhrase = 'Надо начинать играть на деньги\n\u{1F60E}';
         break;
-        case 3: answerPhrase = '3+++';
+        case 3: answerPhrase = 'Ну а то...Я всегда прав';
         break;
        }
        answerField.innerText = answerPhrase;
@@ -196,8 +225,12 @@ function parceNumber(answerNumber) {
     console.log('answerNumber' + answerNumber);
     console.log('Строка значения' + str);
     console.log('Длина значения' + str.length);
-
-
+    
+    //проверка на ноль
+    if (answerNumber == 0) {
+        answerPhrase = 'Ноль ';
+        str.length = 0;
+    }
 
     if (str.length == 3) {
        switch (Math.trunc(str/100)){

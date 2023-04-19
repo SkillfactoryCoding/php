@@ -1,4 +1,227 @@
 .game-card {
-    height: 100vh;
+    height: 40vh;
     font-family: 'Open Sans', monospace;
 }
+
+/*добавляем свои стили*/
+body {
+    max-width: 1200px;
+    min-width: 420px;
+    position: relative;
+    margin: auto;   
+    
+}
+ 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    min-width: 420px;
+    min-height: 150px;
+    margin: auto;
+    opacity: 0.9;
+    top: 50px;
+    border: 5px solid #c7e2fa;
+    background-color: #e9f3fc;
+    }
+
+h1 {
+    position: relative;
+    top:auto; 
+    margin: auto;
+    text-align: center;
+}
+
+h2 {
+    position: relative;
+    top: 10%; 
+    text-align: center;
+}
+
+
+/*nav,
+footer {
+    margin: auto;
+    text-align: center;
+    max-width: 1000px;
+    min-width: 420px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+    
+nav .links,
+footer .links {
+    margin-bottom: 10px;
+}
+    
+nav .links > a,
+footer .links >a  {
+    color: #000000;
+    background-color: #ddf7f8;
+    padding: 0 5px;
+    font-size: 1.4em;
+    font-weight: 800;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+*/
+    
+/*меняем цвет и фон при наведении */
+nav .links > a:hover,
+footer .links > a:hover {
+    color: rgb(0, 0, 0);
+    background-color: #91bcfc;
+}
+
+article {
+    /*width: 768px;*/
+    max-width: 1000px;
+    min-width: 420px;
+    margin: 0 auto 32px;
+    padding: 6px 15px;
+    border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+article a {
+    color: rgb(33, 37, 41);
+    text-decoration: none;
+}
+
+article a:hover {
+    color: #00a100;
+}
+
+/*article h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 5px;
+}*/
+
+/*.article-meta {
+    color: rgb(199, 37, 37);
+    margin-bottom: 5px;
+}*/
+
+
+/* меняем цвет фона у четных задач */
+article:nth-child(even) {
+    background-color: #d9f1f8;
+}
+/* меняем цвет фона у нечетных задач */
+article:nth-child(odd) {
+    background-color: #ecf7bd;
+}
+/* меняем цвет фона у задачи 3А */
+article:nth-child(4) {
+    background-color: #74c0ff;
+}
+
+/*меняем цвет фона у задач при наведении */
+article:hover {
+    background-color: #c9c890;
+}
+
+/*добавляем текст с помощью псевдоэлемента 4ой записи*/
+/*article:nth-child(4) h3::before {
+
+    content: "Дополнительная  ";
+    color: rgb(255, 0, 0);
+}*/
+
+.copyright {
+    color: rgb(44, 19, 187);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.TaskSection {
+    position: relative;
+    /* background-color: #d0d1d3;*/
+    top: 10%; 
+    text-align: center;
+    max-width: 1000px;
+    min-width: 420px;
+    margin: 0 auto 32px;
+    padding: 6px 1px;
+   /* border-bottom: 1px solid rgb(128, 128, 128);*/
+    color: rgb(44, 19, 187);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4em;
+}
+
+.TaskSection2 {
+    position: relative;
+    /*background-color: #d0d1d3;*/
+    top: 5%; 
+    text-align: center;
+    max-width: 1000px;
+    min-width: 420px;
+    margin: 0 auto 32px;
+    padding: 1px 15px;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    color: rgb(44, 19, 187);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+}
+
+.TaskSection3 {
+    position: relative;
+    /*background-color: #d0d1d3;*/
+    top: 5%; 
+    text-align: center;
+    max-width: 1000px;
+    min-width: 420px;
+    margin: 0 0 5px;
+    padding: 1px 5px;
+    /*border-bottom: 1px solid rgb(128, 128, 128);*/
+    /*color: rgb(44, 19, 187);*/
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+}
+.TaskSection4 {
+    position: relative;
+    /*background-color: #d0d1d3;*/
+    top: 5%; 
+    text-align: center;
+    max-width: 1000px;
+    min-width: 420px;
+    margin: 0 auto 5px;
+    padding: 1px 5px;
+   /* border-bottom: 1px solid rgb(128, 128, 128);*/
+    color: rgb(44, 19, 187);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+}
+
+button,
+label,
+input {
+    font-size: 1em;
+}
+/*footer {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+    
+footer .links {
+    margin-bottom: 50px;
+}
+    
+footer .links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+    
+/*меняем цвет и фон при наведении */
+/*footer .links > a:hover {
+    color: rgb(255, 0, 0);
+    background-color: #d0d1d3;
+}*/
