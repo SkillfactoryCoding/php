@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Калькулятор</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css"/>
 </head>
 <body>
+    <!-- Создаем контейнеры  -->
 <div class="container">
     <div class="row calc-row align-items-center">
         <div class="col col-md-4 offset-md-4">
@@ -17,11 +18,93 @@
                     <div class="card-body">
                         <input class="form-control input-window" id="inputWindow" value="">
                         <div class="row no-gutters">
-                            <div class="col">
-                                <button class="btn btn-outline-danger form-control" id="btn_clr">C</button>
+                            <!-- Кнопка сброса -->
+                            <div class="col" id="col" >
+                                <button class="btn btn-danger form-control" id="btn_clr">C</button> <!--класс указанный готовое решение кнопки с bootstrap-->
                             </div>
                         </div>
-                    </div>
+
+
+                        <div class="row no-gutters">
+                            <!-- Кнопка 1 -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_1">1</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>
+                            <!-- Кнопка 2 -->
+                            <div class="col" id="col" >
+                                <button class="btn btn-primary form-control" id="btn_2">2</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>
+                            <!-- Кнопка 3 -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_3">3</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>
+                            <!-- Кнопка + -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_sum">+</button>
+                            </div>
+                        </div> 
+
+
+                        <div class="row no-gutters">
+                            <!-- Кнопка 4 -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_4">4</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>
+                            <!-- Кнопка 5 -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_5">5</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>
+                            <!-- Кнопка 6 -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_6">6</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>
+                            <!-- Кнопка - -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_def">-</button>
+                            </div>
+                        </div> 
+
+
+                        <div class="row no-gutters">
+                            <!-- Кнопка 7 -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_7">7</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>
+                            <!-- Кнопка 8 -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_8">8</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>
+                            <!-- Кнопка 9 -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_9">9</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>
+                            <!-- Кнопка * -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_multiply">*</button>
+                            </div>
+                        </div> 
+
+
+                        <div class="row no-gutters">
+
+                            <!-- Кнопка = (calc) при нажатии на которую будет результат -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_calc">=</button>  
+                            </div>
+                            <!-- Кнопка 0 -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_0">0</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>   
+                            <!-- Кнопка sqrt -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_sqrt">&radic;</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>                          
+                            <!-- Кнопка / -->
+                            <div class="col" id="col">
+                                <button class="btn btn-primary form-control" id="btn_divide">/</button>  <!--класс указанный готовое решение кнопки с bootstrap-->
+                            </div>   
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>

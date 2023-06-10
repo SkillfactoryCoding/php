@@ -1,9 +1,17 @@
+
 .calc-row {
     height: 100vh;
     font-family: 'Share Tech Mono', monospace;
 }
+.card{
+    background: black;
+}
+
 
 .input-window {
     text-align: end;
     font-size: x-large;
+}
+#col{
+    border: 1px solid;
 }
