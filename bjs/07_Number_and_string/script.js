@@ -48,7 +48,6 @@ $calc.addEventListener('click', () => {
 
     operation = null;
     lastOperand = 0;
-    console.log(typeof result);
     inputWindow.value = result;
 })
 
