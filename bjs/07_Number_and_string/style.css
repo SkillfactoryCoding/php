@@ -7,3 +7,9 @@
     text-align: end;
     font-size: x-large;
 }
+.btn { 
+    border: 1px solid transparent; }
+.card-body {
+    background-color: black;
+}
+
