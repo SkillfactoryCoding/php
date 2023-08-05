@@ -1,4 +1,17 @@
 .game-card {
     height: 100vh;
     font-family: 'Open Sans', monospace;
+    justify-content: center;
+}
+
+button#btnRetry {
+    max-width: 150px;
+    width: 100%;
+    background-color: #b1b1b1;
+    color: black;
+    text-decoration: none;
+}
+
+button#btnRetry:hover {
+    background-color: #918f8f;
 }

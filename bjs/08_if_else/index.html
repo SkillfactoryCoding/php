@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Угадайка</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css"/>
 </head>
 <body>
 <div class="container">
     <div class="row game-card align-items-center">
-        <div class="col col-md-4 offset-md-4">
-            <div class="card text-center">
+        <div class="col col-md-4">
+            <div class="card text-center" id="gameContainer" style="display: none">
                 <div class="card-header">
                     <p class="m-0">Вопрос №<span id="orderNumberField">5</span></p>
                 </div>
@@ -23,11 +22,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="btn-group">
-                        <button class="btn btn-info" id="btnLess">&#129047;<br>меньше</button>
+                <div class="card-body buttons-area">
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-outline-primary" id="btnLess">&#129047; меньше</button>
                         <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
-                        <button class="btn btn-info" id="btnOver">больше<br>&#129045;</button>
+                        <button class="btn btn-outline-primary" id="btnOver">&#129045; больше</button>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -37,6 +36,48 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalFirst" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Укажите диаразон чисел</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <input type="text" id="minValue" class="form-control" placeholder="Минимальное знание числа" aria-label="Число от">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" id="maxValue" class="form-control" placeholder="Максимальное знание числа" aria-label="Число до">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="nextModalSecond" >Далее</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalFinish" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="startGame">Поехали</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 </body>
 </html>
