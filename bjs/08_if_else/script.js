@@ -128,7 +128,7 @@ const game = {
                     }
                     else {
                         this.values.maxValue = this.values.answerNumber - 1;
-                        this.recalc();
+                        this.recalc(false);
                     }
                 }
             });
@@ -141,9 +141,10 @@ const game = {
         }
     },
 
-    recalc: function ()
+    recalc: function (ceil = true)
     {
-        this.values.answerNumber  = Math.floor((this.values.minValue + this.values.maxValue) / 2);
+        let n = (this.values.minValue + this.values.maxValue) / 2;
+        this.values.answerNumber = ceil ? Math.ceil(n) : Math.floor(n);
         this.values.orderNumber++;
         this.elements.orderNumberField.innerText = this.values.orderNumber;
         this.elements.answerField.innerText = this.getAnswerText(this.numberToWords(this.values.answerNumber));
