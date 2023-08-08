@@ -114,7 +114,7 @@ const game = {
                     }
                     else {
                         this.values.minValue = this.values.answerNumber + 1;
-                        this.recalc();
+                        this.recalc(false);
                     }
                 }
             });
@@ -128,7 +128,7 @@ const game = {
                     }
                     else {
                         this.values.maxValue = this.values.answerNumber - 1;
-                        this.recalc(false);
+                        this.recalc();
                     }
                 }
             });
