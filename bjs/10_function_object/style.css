@@ -1,0 +1,14 @@
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-card {
+    max-width: 500px;
+    width: 100%;
+}
+.card-header {
+    background-color: #d7d7d7;
+}
