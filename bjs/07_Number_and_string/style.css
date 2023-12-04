@@ -1,6 +1,14 @@
+body {
+    background-color: rgb(193, 248, 237);
+}
+
+.card-body {
+    background-color: rgb(120, 240, 248)
+}
+
 .calc-row {
     height: 100vh;
-    font-family: 'Share Tech Mono', monospace;
+    font-family:'Courier New', Courier, monospace; 
 }
 
 .input-window {
