@@ -1,4 +1,52 @@
+
+.card {
+    cursor: default;
+    margin-right: 20px;
+    transition: 1s;
+}
+
 .game-card {
     height: 100vh;
-    font-family: 'Open Sans', monospace;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.card-header {
+    background-color: rgba(127, 206, 255, 0.301);
+}
+
+.card-footer {
+    background-color: rgba(127, 206, 255, 0.301);
+}
+
+.card-body {
+    background-color: rgba(197, 205, 210, 0.301);
+}
+
+.form-group {
+    margin-inline: auto;
+    padding: 5px;
+    width: auto;
+}
+
+label {
+    padding: 0px 10px 0px 0px;
+}
+
+#btnRetry {
+    text-decoration: none;
+    color: rgb(37, 2, 194);
+}
+
+#btnRetry:hover {
+    color: rgb(255, 18, 1);
+    font-weight: bold;
+}
+
+#btnEqual {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.hidden {
+    display: none;
 }
